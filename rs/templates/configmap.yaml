@@ -1,7 +1,7 @@
 {{- include "mylibchart.configmap" (list . "mychart.configmap") -}}
 {{- define "mychart.configmap" -}}
 data:
-  myvalue: {{ .fullname }}
+  myvalue: {{ .Values.fullname }}
   {{- $relname := .Release.Name -}}
   {{- with .Values.favorite }}
   drink: {{ .drink | default "tea" | quote }}
